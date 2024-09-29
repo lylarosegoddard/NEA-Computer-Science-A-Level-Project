@@ -26,14 +26,18 @@ def complete(prompt):
         model="gpt-4o-mini",
     )
     return chat_completion.choices[0].message.content
+    
+name = input("Hi there, enter your name:\n")
+friendName = input(f"Hi {name}, who would you like to talk to today? \n")
+
 
 while True:    
-    prompt = input("Hi there, enter your prompt:\n")
+    prompt = input(f"{name}: ")
+    
 
     if prompt == "exit":
         print("Goodbye!")
         break 
         
-    print( "user:", prompt,"\n")
-    print("friend:", complete(prompt),"\n")
-    
+    print(friendName, ":", complete(prompt),"\n")
+     
