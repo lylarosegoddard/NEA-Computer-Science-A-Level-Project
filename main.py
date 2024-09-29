@@ -27,6 +27,13 @@ def complete(prompt):
     )
     return chat_completion.choices[0].message.content
 
-prompt = input("Hi there, enter your prompt: ")
-print("user:", prompt)
-reponse = print("\n","friend:", complete(prompt))
+while True:    
+    prompt = input("Hi there, enter your prompt:\n")
+
+    if prompt == "exit":
+        print("Goodbye!")
+        break 
+        
+    print( "user:", prompt,"\n")
+    print("friend:", complete(prompt),"\n")
+    
