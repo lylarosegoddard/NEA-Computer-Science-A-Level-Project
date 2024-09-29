@@ -29,7 +29,7 @@ def complete(prompt):
     
 name = input("Hi there, enter your name:\n")
 friendName = input(f"Hi {name}, who would you like to talk to today? \n")
-
+print("\n\n")
 
 while True:    
     prompt = input(f"{name}: ")
