@@ -36,8 +36,8 @@ while True:
     
 
     if prompt == "exit":
-        print("Goodbye!")
+        print("Goodbye! It was fun chatting with you.")
         break 
         
     print(friendName, ":", complete(prompt),"\n")
-     
+
