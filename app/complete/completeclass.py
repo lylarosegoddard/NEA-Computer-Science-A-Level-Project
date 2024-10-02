@@ -1,29 +1,26 @@
-import os
 from openai import OpenAI
+import os
 
 class Complete:
-   def __init__(self, client): 
+   def __init__(self, system_prompt): 
+    self.system_prompt = system_prompt
     self.client = OpenAI(
         # This is the default and can be omitted
         api_key=os.environ.get("OPENAI_API_KEY"),
     )
-    return client
+
+ 
        
-   def complete(self, prompt): 
-    AI_FRIEND_PROMPT = """
-        You are acting as a virtual friend to test bullying behaviour so get upset if I bully you.
-        Otherwise act as a friend having a normal conversation.
-    """
-   
+   def complete(self, message):   
     chat_completion = self.client.chat.completions.create(
         messages=[
             {
                 "role": "system",
-                "content": AI_FRIEND_PROMPT,
+                "content": self.system_prompt,
             },
             {
                 "role": "user",
-                "content": prompt,
+                "content": message,
             }
         ],
         model="gpt-4o-mini",
