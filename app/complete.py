@@ -1,5 +1,5 @@
-from openai import OpenAI
 import os
+from openai import OpenAI
 
 class Complete:
    def __init__(self, system_prompt): 
@@ -9,8 +9,8 @@ class Complete:
         api_key=os.environ.get("OPENAI_API_KEY"),
     )
 
- 
-       
+
+
    def complete(self, message):   
     chat_completion = self.client.chat.completions.create(
         messages=[
