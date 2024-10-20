@@ -15,6 +15,7 @@ class Conversation:
 
       friend_response = f"{self.friend.name} : {self.friend.respond(prompt) } \n"
       self.messages.append(friend_response)
+      # check for bullying using bullyclass if  statement, when not bullying complete the action
       print(friend_response ,"\n")
 
     
