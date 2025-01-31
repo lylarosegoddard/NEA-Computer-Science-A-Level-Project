@@ -19,6 +19,7 @@ class Conversation:
       explanation = self.bullycatcher.detect_bullying(self.messages)
       if explanation is not None:
         print("WARNING: Bullying detected in your message!")
+        print(" ")
         print(explanation)
         continue
       
