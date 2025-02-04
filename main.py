@@ -1,12 +1,17 @@
+from site import USER_SITE
 from openai import OpenAI
 from app.friend import Friend
-from app.conversation import Conversation
+from app.conversation_runner import ConversationRunner
+from app.peewee import initialise_database, User
+
+initialise_database()
 
 name = input("Hi there, enter your name:\n")
-friendName = input(f"Hi {name}, who would you like to talk to today? \n")
-print("\n\n")
+user, created = User.get_or_create(name = name)
 
-friend = Friend(friendName)
+friend_name = input(f"Hi {name}, who would you like to talk to? \n")
+friend = Friend(friend_name)
+conversation = ConversationRunner(user, friend)
 
-conversation = Conversation(name, friend)
-conversation.run() 
+conversation.start_conversation(user)
+conversation.run()
