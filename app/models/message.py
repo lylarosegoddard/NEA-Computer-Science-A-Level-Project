@@ -8,4 +8,4 @@ class Message(BaseModel):
     message = TextField()
     created_at = DateTimeField(default=datetime.datetime.now)
     bullying = BooleanField(default = False)
-    explanation = TextField()
+    explanation = TextField(null = True)
