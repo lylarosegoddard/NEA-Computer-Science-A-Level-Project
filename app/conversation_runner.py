@@ -30,12 +30,14 @@ class ConversationRunner(BaseModel):
         print(explanation)
         self.save_message(user_message, explanation)
         continue
+
+      self.save_message(self.user.name, user_message)
       
       friend_response = f"{self.friend.name} : {self.friend.respond(user_message) } \n"
       self.messages.append(friend_response)
       print(friend_response ,"\n")
   
-      self.save_message(self.friend.name, friend_response)  
+      self.save_message(self.friend.name, friend_response)
   
   def save_message(self, message, explanation = None):
     if self.conversation is not None:
