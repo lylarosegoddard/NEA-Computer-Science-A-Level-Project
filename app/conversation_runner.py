@@ -28,26 +28,36 @@ class ConversationRunner(BaseModel):
       if explanation is not None:
         print("WARNING: Bullying detected in your message!")
         print(explanation)
-        self.save_message(user_message, explanation)
+        self.save_message(self.user.name, explanation)
         continue
+      
 
       self.save_message(self.user.name, user_message)
       
       friend_response = f"{self.friend.name} : {self.friend.respond(user_message) } \n"
       self.messages.append(friend_response)
       print(friend_response ,"\n")
-  
+
       self.save_message(self.friend.name, friend_response)
-  
+
   def save_message(self, message, explanation = None):
     if self.conversation is not None:
       Message.create(
         message = message,
         explanation = explanation,
-        bullying = explanation is not None,
+        is_bullying = explanation is not None,
         conversation = self.conversation
       )
+  
+  def is_bullying_so_add_1_to_bullying(self, message, is_bullying): 
+    if Message.is_bullying == True:
+        query = (Message
+        .update(bullying = Message.bullying + 1)
+        .where(Message.explanation is not None))
 
+        rows_updated = query.execute()
+        print(f"rows updated: {rows_updated}")
+    
 
 
     
