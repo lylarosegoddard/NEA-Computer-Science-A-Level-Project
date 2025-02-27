@@ -2,7 +2,7 @@ from site import USER_SITE
 from openai import OpenAI
 from app.friend import Friend
 from app.conversation_runner import ConversationRunner
-from app.peewee import initialise_database, User
+from app.peewee import initialise_database, User, Message
 
 initialise_database()
 
