@@ -1,5 +1,5 @@
 from app.models.base_model import BaseModel
-from peewee import CharField, IntegerField, BooleanField
+from peewee import CharField, BooleanField
 import hashlib
 
 
@@ -15,3 +15,4 @@ class User(BaseModel):
     def set_password(self, password):
         self.hashed_password = self.hash_password(password)
         self.save()
+
