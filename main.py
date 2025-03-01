@@ -5,6 +5,7 @@ from app.conversation_runner import ConversationRunner
 from app.peewee import initialise_database 
 from app.models.user import User
 from app.models.message import Message
+from app.banned_query import BannedQuery
 
 initialise_database()
 
@@ -18,6 +19,10 @@ else:
     if not user.check_password(password):
         print("Incorrect password")
         exit()
+    print("Welcome back " + name + "!\n")   
+
+if BannedQuery(user).banned():
+    print("You have exceeded the number of bullying offences allowed. You have been banned.")
 
 friend_name = input(f"Hi {name}, who would you like to talk to? \n")
 friend = Friend(friend_name)
