@@ -23,6 +23,7 @@ else:
 
 if BannedQuery(user).banned():
     print("You have exceeded the number of bullying offences allowed. You have been banned.")
+    exit()
 
 friend_name = input(f"Hi {name}, who would you like to talk to? \n")
 friend = Friend(friend_name)
