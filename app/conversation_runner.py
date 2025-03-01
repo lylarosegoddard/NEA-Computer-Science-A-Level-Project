@@ -31,16 +31,19 @@ class ConversationRunner(BaseModel):
         self.save_message(self.user.name, explanation)
         continue
       
-
-      self.save_message(self.user.name, user_message)
+      self.save_message(user_message)
       
       friend_response = f"{self.friend.name} : {self.friend.respond(user_message) } \n"
       self.messages.append(friend_response)
       print(friend_response ,"\n")
 
-      self.save_message(self.friend.name, friend_response)
+      self.save_message(friend_response)
 
   def save_message(self, message, explanation = None):
+    print("Saving message...")
+    print("Message: ", message)
+    print("Explanation: ", explanation)
+    print("Is bullying: ", explanation is not None)
     if self.conversation is not None:
       Message.create(
         message = message,
@@ -49,15 +52,6 @@ class ConversationRunner(BaseModel):
         conversation = self.conversation
       )
   
-  def is_bullying_so_add_1_to_bullying(self, message, is_bullying): 
-    if Message.is_bullying == True:
-        query = (Message
-        .update(bullying = Message.bullying + 1)
-        .where(Message.explanation is not None))
-
-        rows_updated = query.execute()
-        print(f"rows updated: {rows_updated}")
-    
 
 
     
