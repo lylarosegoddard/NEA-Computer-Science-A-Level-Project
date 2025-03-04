@@ -20,7 +20,7 @@ class ConversationRunner(BaseModel):
       user_message = input(f"{self.user.name}: ")
       self.messages.append(f"{self.user.name} : {user_message}")
 
-      if user_message == "Goodbye.":
+      if user_message == "Goodbye":
           print("Goodbye!")
           return 
 
@@ -40,10 +40,6 @@ class ConversationRunner(BaseModel):
       self.save_message(friend_response)
 
   def save_message(self, message, explanation = None):
-    print("Saving message...")
-    print("Message: ", message)
-    print("Explanation: ", explanation)
-    print("Is bullying: ", explanation is not None)
     if self.conversation is not None:
       Message.create(
         message = message,
