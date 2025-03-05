@@ -18,7 +18,8 @@ class ConversationRunner(BaseModel):
   def run(self):
     while True:    
       user_message = input(f"{self.user.name}: ")
-      self.messages.append(f"{self.user.name} : {user_message}")
+      formatted_message = f"{self.user.name} : {user_message}"
+      self.messages.append(formatted_message)
 
       if user_message == "Goodbye":
           print("Goodbye!")
@@ -28,10 +29,10 @@ class ConversationRunner(BaseModel):
       if explanation is not None:
         print("WARNING: Bullying detected in your message!")
         print(explanation)
-        self.save_message(self.user.name, explanation)
+        self.save_message(formatted_message, explanation)
         continue
       
-      self.save_message(user_message)
+      self.save_message(formatted_message)
       
       friend_response = f"{self.friend.name} : {self.friend.respond(user_message) } \n"
       self.messages.append(friend_response)
