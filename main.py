@@ -11,14 +11,19 @@ initialise_database()
 
 name = input("Hi there, enter your name:\n")
 user = User.get_or_none(name = name)
-password = input("Enter a password:\n")
+password = input("Enter a password or type 'quit' to exit:\n")
 if user is None:
     user = User(name = name)
     user.set_password(password)
+elif password.lower() == 'quit':
+    print("Goodbye!")
+    exit()
 else:
-    if not user.check_password(password):
-        print("Incorrect password")
-        exit()
+    while not user.check_password(password): 
+        password = input("Incorrect password please try again or type 'quit' to exit:\n")
+        if password.lower() == 'quit':
+            print("Goodbye!")
+            exit()
     print("Welcome back " + name + "!\n")   
 
 if BannedQuery(user).banned():
