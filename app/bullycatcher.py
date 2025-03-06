@@ -1,11 +1,14 @@
+#Bullycatcher class
+
+#imports Complete class so the bullycatcher class can connect to the OpenAI API
 from app.complete import Complete
 
 class Bullycatcher:
 
   SYSTEM_PROMPT = """
-You will determine whether the latest message in a conversation is bullying,
-focusing only on that message while considering the full conversation history for context. 
-Bullying includes using technology to harass, threaten, embarrass, or target someone,
+ You will determine whether the latest message in a conversation is bullying,
+ focusing only on that message while considering the full conversation history for context. 
+ Bullying includes using technology to harass, threaten, embarrass, or target someone,
  and involves mocking, hostile, dismissive, or insulting statements meant to degrade someone. 
  If the latest message contains insults like “you stink,” “stupid,” “fat,” 
  or anything else meant to belittle someone's appearance, intelligence, or worth, 
@@ -34,12 +37,14 @@ Bullying includes using technology to harass, threaten, embarrass, or target som
 
   def __init__(self):
     self.open_ai = Complete(self.SYSTEM_PROMPT)
-
+#uses the Complete class to connect to the OpenAI API and carry out the SYSTEM_PROMPT
 
   def detect_bullying(self, messages):
     conversation_text = "\n".join(messages)
+    #joins the messages together to create a conversation
     response = self.open_ai.complete(conversation_text)
+    #for each message in the conversation, check if the user is bullying
     if response == "False":
         return None
     return response
-   
+    #if the user is bullying return the response
