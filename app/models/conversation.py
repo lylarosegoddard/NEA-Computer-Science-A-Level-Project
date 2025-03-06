@@ -1,8 +1,15 @@
+#Conversation class/table
+
+#inherits from base model class
 from app.models.base_model import BaseModel
+#imports
 from app.models.user import User
 import datetime
 from peewee import ForeignKeyField, DateTimeField
 
+#table in database
 class Conversation(BaseModel):
-    user = ForeignKeyField(User, backref='conversations')  # One-to-many relationship
+    user = ForeignKeyField(User, backref='conversations')  
+    #one-to-many relationship between user and conversation
     created_at = DateTimeField(default=datetime.datetime.now)
+    #saves date and time when conversation is created
