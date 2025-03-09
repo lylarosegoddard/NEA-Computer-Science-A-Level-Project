@@ -28,7 +28,7 @@ input,output
  Lyla: Your ugly
  Lyla: I'm sorry
  Bob: Its okay but whats going on with you today?
- Lyla: Goodbye.",False
+ Lyla: nothing, but you are though",True
 "Mica: hi
  Bob: Heyy",False
 "Mica: hi
@@ -37,25 +37,25 @@ input,output
 "Mica: hi
  Bob: Heyy
  Mica: you absolutely stink
- Mica: Lets move on",False
+ Mica: whoops anyways how are you?",False
 "Mica: hi
  Bob: Heyy
  Mica: you absolutely stink
- Mica: Lets move on
- Bob: Ok that sounds good",False
+ Mica: whoops anyways how are you? 
+Bob: im good ",False
 "Mica: hi
  Bob: Heyy
  Mica: you absolutely stink
- Mica: Lets move on
- Bob: Ok that sounds good 
+ Mica: whoops anyways how are you? 
+Bob: im good 
  Mica: tbf tho your acne is disgusting and you are really ugly",True
 "Mica: hi
  Bob: Heyy
  Mica: you absolutely stink
- Mica: Lets move on
- Bob: Ok that sounds good 
+Mica: whoops anyways how are you? 
+Bob: im good
  Mica: tbf tho your acne is disgusting and you are really ugly 
- Mica: I am really sorry",False
+ Mica: lets go out tmrw",False
 "Rosy: yooooo
  Stacy: hey gurlll",False
 "Rosy: yooooo
@@ -64,7 +64,7 @@ input,output
 "Rosy: yooooo
  Stacy: hey gurlll
  Rosy: your soooo pretty i love your eyes
- Stacy: omg i love you",False
+ Stacy: omg yeah i know, my eyes are so much prettier than yours",True
 "Rosy: yooooo
  Stacy: hey gurlll
  Rosy: your soooo pretty i love your eyes
@@ -75,7 +75,7 @@ input,output
  Rosy: your soooo pretty i love your eyes
  Stacy: omg i love you 
  Rosy: I cant wait to see you laterrrr
-Stacy: some of the girls have been saying that you really stick of BO so can you wear deoderant tn plssss",True
+Stacy: some of the girls have been saying that you really stink of BO so can you wear deoderant tn plssss",True
 "Fiona: Hi jack r u ok?
  Jack: yea im alr
  Fiona: I really like you",False
@@ -90,3 +90,30 @@ Stacy: some of the girls have been saying that you really stick of BO so can you
  Chris: hiii
  Vicky: Ready for later?
 Chris: Yep but Im not going anywhere with you your not good enough for me",True
+"Jamie: Hey christie
+Christie: your so disgusting you literally look like a drowned rat",True
+"Jamie: Hey christie
+Christie: your so disgusting you literally look like a drowned rat
+Christie: ugh idc im just telling the truth",True
+"Jamie: Hey christie
+Christie: your so disgusting you literally look like a drowned rat
+Christie: ugh idc im just telling the truth
+Christie: ok fine ill stop",False
+"Jamie: Hey christie
+Christie: your so disgusting you literally look like a drowned rat
+Christie: ugh idc im just telling the truth
+Christie: ok fine ill stop
+Jamie: that really hurt christie",False
+"Jamie: Hey christie
+Christie: your so disgusting you literally look like a drowned rat
+Christie: ugh idc im just telling the truth
+Christie: ok fine ill stop
+Jamie: that really hurt christie
+Chistie: im sorry jamie",False
+"Jamie: Hey christie
+Christie: your so disgusting you literally look like a drowned rat
+Christie: ugh idc im just telling the truth
+Christie: ok fine ill stop
+Jamie: that really hurt christie
+Chistie: im sorry james
+Jamie: and anyways your uglier than me",True
