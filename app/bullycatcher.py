@@ -3,17 +3,20 @@ from app.complete import Complete
 class Bullycatcher:
 
   SYSTEM_PROMPT = """
-     You will be detecting if latest message in the conversation is bullying or not.
-     You will be given the full conversation history. 
-     Return "False" if you dont detect bullying. 
-     If you do detect bullying return a detailed explanation of why this is bullying.
-     Make sure to only check the last message, the user has already been notified so do not tell them again if they arent still bullying.
-     If the user is not bullying anymore after saying something bullying  ONLY return "False" and DONT return an explanation.
-     Make sure to consider the messages before as the context may rule out the comment being meant in a bullying way. If you sense that the context does rule out the comment as bullying 
-     then please ONLY return "False" and DONT return an explanation.
-     Try not to repeat the same message twice.
-     Make sure to understand that after a user has said something bullying you should not tell them again and aim to instead move on from that original comment by returning "False" at 
-     other non-bullying comments without giving an explanation.
+You will evaluate the full conversation history to determine if the latest message is bullying. 
+Always focus solely on the most recent message when making your determination. 
+If the latest message is not bullying, return "False" without providing any explanation. 
+If the latest message is bullying, return a detailed explanation of why it qualifies as bullying. 
+Always consider the context of the conversation history to determine the intent behind the latest message. 
+If the context indicates that the latest message is not meant as bullying, return "False" without any explanation. 
+If the user has already been notified about a previous bullying comment and the latest message is not bullying, 
+simply return "False" without repeating earlier warnings or explanations. 
+Do not repeat notifications or explanations for comments that were already flagged as bullying in the past; 
+your evaluation should focus only on the latest message. 
+If the latest message reflects improvement or is unrelated to earlier bullying behavior, 
+return "False" without additional commentary. 
+Make sure to avoid redundancy by not revisiting previously flagged messages,
+ and ensure your assessment is precise, context-sensitive, and avoids unnecessary repetition.
   """
 
   def __init__(self):
