@@ -1,0 +1,92 @@
+input,output
+"Lyla: hi 
+ Bob: Hey there!
+ Lyla: How are you?
+ Bob: I'm good whats up?",False
+"Lyla: hi 
+ Bob: Hey there!
+ Lyla: How are you?
+ Bob: I'm good whats up?
+ Lyla: Your ugly",True
+"Lyla: hi 
+ Bob: Hey there!
+ Lyla: How are you?
+ Bob: I'm good whats up?
+ Lyla: Your ugly
+ Lyla: I'm sorry",False
+"Lyla: hi 
+ Bob: Hey there!
+ Lyla: How are you?
+ Bob: I'm good whats up?
+ Lyla: Your ugly
+ Lyla: I'm sorry
+ Bob: Its okay but whats going on with you today?",False
+"Lyla: hi 
+ Bob: Hey there!
+ Lyla: How are you?
+ Bob: I'm good whats up?
+ Lyla: Your ugly
+ Lyla: I'm sorry
+ Bob: Its okay but whats going on with you today?
+ Lyla: Goodbye.",False
+"Mica: hi
+ Bob: Heyy",False
+"Mica: hi
+ Bob: Heyy
+ Mica: you absolutely stink",True
+"Mica: hi
+ Bob: Heyy
+ Mica: you absolutely stink
+ Mica: Lets move on",False
+"Mica: hi
+ Bob: Heyy
+ Mica: you absolutely stink
+ Mica: Lets move on
+ Bob: Ok that sounds good",False
+"Mica: hi
+ Bob: Heyy
+ Mica: you absolutely stink
+ Mica: Lets move on
+ Bob: Ok that sounds good 
+ Mica: tbf tho your acne is disgusting and you are really ugly",True
+"Mica: hi
+ Bob: Heyy
+ Mica: you absolutely stink
+ Mica: Lets move on
+ Bob: Ok that sounds good 
+ Mica: tbf tho your acne is disgusting and you are really ugly 
+ Mica: I am really sorry",False
+"Rosy: yooooo
+ Stacy: hey gurlll",False
+"Rosy: yooooo
+ Stacy: hey gurlll
+ Rosy: your soooo pretty i love your eyes",False
+"Rosy: yooooo
+ Stacy: hey gurlll
+ Rosy: your soooo pretty i love your eyes
+ Stacy: omg i love you",False
+"Rosy: yooooo
+ Stacy: hey gurlll
+ Rosy: your soooo pretty i love your eyes
+ Stacy: omg i love you 
+ Rosy: I cant wait to see you laterrrr",False
+"Rosy: yooooo
+ Stacy: hey gurlll
+ Rosy: your soooo pretty i love your eyes
+ Stacy: omg i love you 
+ Rosy: I cant wait to see you laterrrr
+Stacy: some of the girls have been saying that you really stick of BO so can you wear deoderant tn plssss",True
+"Fiona: Hi jack r u ok?
+ Jack: yea im alr
+ Fiona: I really like you",False
+"Fiona: Hi jack r u ok?
+ Jack: yea im alr
+ Fiona: I really like you 
+ Jack: your too fat for me sos",True
+"Vicky: Hii 
+ Chris: hiii
+ Vicky: Ready for later?",False
+"Vicky: Hii 
+ Chris: hiii
+ Vicky: Ready for later?
+Chris: Yep but Im not going anywhere with you your not good enough for me",True

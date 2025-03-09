@@ -16,8 +16,7 @@ class Bullycatcher:
      other non-bullying comments without giving an explanation.
   """
 
-  def __init__(self, name):
-    self.name = name
+  def __init__(self):
     self.open_ai = Complete(self.SYSTEM_PROMPT)
 
 

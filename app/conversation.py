@@ -5,7 +5,7 @@ class Conversation:
     self.name = name
     self.friend = friend
     self.messages = []
-    self.bullycatcher = Bullycatcher(name)
+    self.bullycatcher = Bullycatcher()
 
   def run(self):
     while True:    

@@ -7,17 +7,17 @@ class Evaluation:
 
 
     def evaluate(self, testcases):
-        self.evaluation_results = list(map(
+        self.evaluation_results = list(map( #mapping
             self.create_result,
             testcases
         ))
         return self.precision(), self.recall()
     
     def precision(self):
-        true_positive_count = len([r for r in self.evaluation_results if r.true_positive()])
+        true_positive_count = len([r for r in self.evaluation_results if r.true_positive()]) #list comprehension
         false_positive_count = len([r for r in self.evaluation_results if r.false_positive()])
         try:
-            return true_positive_count / (true_positive_count + false_positive_count)
+            return true_positive_count / (true_positive_count + false_positive_count) #exception handling
         except ZeroDivisionError:
             return 0
 
@@ -34,7 +34,10 @@ class Evaluation:
 
     def create_result(self, testcase):
         messages = testcase["input"].split("\n")
+        actual = str(self.bully_catcher.detect_bullying(messages) is not None)
+        print(f"message: {messages[-1]} - expected: {testcase['output']} - actual: {actual}")
         return EvaluationResult(
             expected = testcase["output"],
-            actual = str(self.bully_catcher.detect_bullying(messages) is not None)
+            actual = actual
         )
+        

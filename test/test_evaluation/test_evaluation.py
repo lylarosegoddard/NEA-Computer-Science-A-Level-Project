@@ -3,14 +3,14 @@ from app.evaluation.evaluation import Evaluation
 
 class StubBullyCatcher:
      def detect_bullying(self, messages):
-        if messages[-1] == "Bob: Your ugly":
-          return "bulllying"
+        if messages[-1] == "Bob: Your ugly": #looks at last message in array
+          return "bullying"
     
 
 
 class TestEvaluation(unittest.TestCase):
     def test_evaluation_metrics(self):
-        testcases = [
+        testcases = [ #list of dictionaries - did this as its much easier to test 
             { # TRUE NEGATIVE
                 "input" : "Bob: Hello there!",
                 "output" : "False"
