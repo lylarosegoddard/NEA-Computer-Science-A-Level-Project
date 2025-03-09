@@ -4,10 +4,10 @@ class EvaluationResult:
         self.actual = actual
 
     def true_positive(self):
-        return self.expected and self.actual
+        return self.expected == "True" and self.actual == "True"
 
     def false_positive(self):
-        return not self.expected and self.actual
+        return self.expected == "False" and self.actual == "True"
 
     def false_negative(self):
-        return self.expected and not self.actual
+        return self.expected == "True" and self.actual == "False"
