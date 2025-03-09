@@ -16,16 +16,21 @@ class Evaluation:
     def precision(self):
         true_positive_count = len([r for r in self.evaluation_results if r.true_positive()])
         false_positive_count = len([r for r in self.evaluation_results if r.false_positive()])
-        if true_positive_count + false_positive_count == 0:
+        try:
+            return true_positive_count / (true_positive_count + false_positive_count)
+        except ZeroDivisionError:
             return 0
-        return true_positive_count / (true_positive_count + false_positive_count)
+
+
     
     def recall(self):
         true_positive_count = len([r for r in self.evaluation_results if r.true_positive()])
         false_negative_count = len([r for r in self.evaluation_results if r.false_negative()])
-        if true_positive_count + false_negative_count == 0:
+        try:
+            return true_positive_count / (true_positive_count + false_negative_count)
+        except ZeroDivisionError:
             return 0
-        return true_positive_count / (true_positive_count + false_negative_count)
+        
 
     def create_result(self, testcase):
         messages = testcase["input"].split("\n")

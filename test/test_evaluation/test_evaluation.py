@@ -41,3 +41,8 @@ class TestEvaluation(unittest.TestCase):
         self.assertEqual(precision, 0.5)
         self.assertEqual(recall, 0.25)
 
+    def test_handles_zero_values(self):
+        evaluation = Evaluation(StubBullyCatcher())
+        precision, recall = evaluation.evaluate([])
+        self.assertEqual(precision, 0)
+        self.assertEqual(recall, 0)
