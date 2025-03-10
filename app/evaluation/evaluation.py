@@ -48,6 +48,6 @@ class Evaluation:
         return EvaluationResult(
             expected = testcase["output"],
             actual = actual,
-            message = messages[-1]
+            message = "\n".join(messages)
         )
         

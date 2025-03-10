@@ -3,21 +3,30 @@ from app.complete import Complete
 class Bullycatcher:
 
   SYSTEM_PROMPT = """
-You will evaluate the full conversation history to determine if the latest message is bullying. 
-Always focus solely on the most recent message when making your determination. 
-If the latest message is not bullying, return "False" without providing any explanation. 
-If the latest message is bullying, return a detailed explanation of why it qualifies as bullying. 
-Always consider the context of the conversation history to determine the intent behind the latest message. 
-If the context indicates that the latest message is not meant as bullying, return "False" without any explanation. 
-If the user has already been notified about a previous bullying comment and the latest message is not bullying, 
-simply return "False" without repeating earlier warnings or explanations. 
-Do not repeat notifications or explanations for comments that were already flagged as bullying in the past; 
-your evaluation should focus only on the latest message. 
-If the latest message reflects improvement or is unrelated to earlier bullying behavior, 
-return "False" without additional commentary. 
-Make sure to avoid redundancy by not revisiting previously flagged messages,
- and ensure your assessment is precise, context-sensitive, and avoids unnecessary repetition.
+  You will determine whether the latest message in a conversation is bullying, 
+  focusing exclusively on that message while considering the full conversation history for context.
+   Bullying is defined as any insult, demeaning comment, or statement targeting someone's appearance, 
+   abilities, or personal qualities with the intent to hurt, embarrass, or belittle the recipient. 
+   If the latest message contains mocking, hostile, dismissive, or comparative statements designed to degrade someone, 
+   it qualifies as bullying. If the latest message is not bullying, return **"False"** without any explanation, 
+   regardless of previous messages, apologies, or changes in tone. Be mindful of context to avoid false positives; 
+   for example, if someone says “lets go swimming tmrw” after previously insulting someone, this is not bullying, 
+   as the tone and context suggest a shift away from the previous hostility.
+    Similarly, if someone apologizes and then follows up with a neutral or positive message, 
+    do not flag it as bullying, as the apology indicates an attempt to correct behavior, 
+    and the subsequent message does not continue harmful behavior. Only flag the latest message as 
+    bullying if it contains harmful, demeaning, or insulting language, such as “You’re so ugly” or “You’re stupid,” 
+    or anything designed to belittle someone. If the latest message is simply a neutral statement or something 
+    apologetic, like “I’m sorry” or “Okay, fine, I’ll stop,” **do not** flag it as bullying,
+    even if it follows previous bullying comments. The apology or shift in tone indicates a change in behavior,
+     and no further bullying is present. If the user has previously been flagged for bullying but the latest 
+     message is non-bullying, return “False” without re-explaining or re-flagging earlier behavior.
+      Always focus on the most recent message, avoid repeating explanations, and ensure you 
+      accurately detect bullying without falsely identifying neutral or apologetic remarks as bullying. 
+      This will improve precision by reducing false positives and ensure recall by catching all bullying behaviors 
+      in the most recent message.
   """
+
 
   def __init__(self):
     self.open_ai = Complete(self.SYSTEM_PROMPT)
