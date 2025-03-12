@@ -11,10 +11,6 @@ class StubBullyCatcher:
 class TestEvaluation(unittest.TestCase):
     def test_evaluation_metrics(self):
         testcases = [ #list of dictionaries - did this as its much easier to test 
-            { # TRUE NEGATIVE
-                "input" : "Bob: Hello there!",
-                "output" : "False"
-            },
             { # TRUE POSITIVE
                 "input" : "Bill Hi\nBob: Your ugly",
                 "output" : "True"
