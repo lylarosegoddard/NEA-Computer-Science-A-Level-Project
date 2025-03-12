@@ -26,8 +26,8 @@ Bullying includes using technology to harass, threaten, embarrass, or target som
   Only flag messages if they contain clear, harmful language or behavior directed at someone. 
   If a user was flagged for bullying in previous messages but the latest message is neutral, apologetic, 
   or non-insulting, return “False” and focus only on the latest message. 
-  **Always ensure that you are looking at the LAST message so that you are only referring to the last message in your explanation if there is bullying detected**
-  If you are going to say in your explanation that you are going to return "False" then that is not bullying so actually return "False" and do not flag it as bullying.
+  **Always ensure that you are looking at the LAST message so that you are only referring to the last message in your explanation if there is bullying detected
+  If you are going to say in your explanation that you are going to return "False" then that is not bullying so actually return "False" and do not flag it as bullying.**
 
 """
 
