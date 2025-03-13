@@ -6,7 +6,7 @@ from app.evaluation.evaluation import Evaluation
 
 class StubBullyCatcher:
      def detect_bullying(self, messages):
-        if messages[-1] == "Bob: Your ugly": #looks at last message in array
+        if messages[-1] == "Bob: Your ugly": #looks at last message in list
           return "bullying"
 
 
@@ -47,3 +47,4 @@ class TestEvaluation(unittest.TestCase):
         self.assertEqual(precision, 0)
         self.assertEqual(recall, 0)
         #tests that zero values are correctly handled by the try/except block
+        

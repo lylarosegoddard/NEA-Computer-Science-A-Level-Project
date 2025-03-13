@@ -19,5 +19,5 @@ class BannedQuery:
         # JOIN conversation ON message.conversation_id = conversation.id
         # JOIN user ON conversation.user_id = user.id
         # WHERE message.is_bullying = 1 
-        # AND user.id = {self.user.id}
+        # AND user.id = ?;
         

@@ -16,3 +16,8 @@ class Message(BaseModel):
     explanation = TextField(null = True)
     #saves the message, the date and time the message was created, the bullying score, 
     #whether the message is bullying or not and the explanation if the message is bullying
+
+
+
+
+    

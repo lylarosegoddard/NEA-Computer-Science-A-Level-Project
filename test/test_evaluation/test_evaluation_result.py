@@ -25,3 +25,5 @@ class TestEvaluationResult(unittest.TestCase):
         self.assertFalse(result.false_positive())
         self.assertTrue(result.false_negative())
         #tests if the result is false negative
+
+

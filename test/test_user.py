@@ -28,3 +28,4 @@ class TestUserLogin(unittest.TestCase):
         self.assertFalse(self.user.check_password('wrongpassword'))
     #is false when the password is incorrect
 
+

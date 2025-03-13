@@ -15,11 +15,11 @@ class Bullycatcher:
   return “False”, even if previous messages were bullying or if there was an apology or change in tone. 
   For example, if someone says “I'm sorry” or “let's hang out tomorrow” or "lets move on" or "im hungry", 
   or random things like "i dont know" or "i like strawberries" after an insult, 
-  it should not be flagged as bullying because the apology or neutral statement doesn’t continue harmful behavior. 
-  If the message is neutral, like “I’m tired” “let’s get lunch” or “I’m sorry” , make sure to check for slang e.g. "your slay" 
+  it should not be flagged as bullying because the apology or neutral statement doesn't continue harmful behavior. 
+  If the message is neutral, like “I'm tired” “let's get lunch” or “I'm sorry” , make sure to check for slang e.g. "your slay" 
   **do not flag** it as bullying and return "False", 
   even if it follows previous insults. However, if the latest message contains insults such as “you look disgusting” 
-  or “you’re a loser” or "i cba to be friends with you" it should be flagged as bullying because it is harmful and degrading. 
+  or “you're a loser” or "i cba to be friends with you" it should be flagged as bullying because it is harmful and degrading. 
   Be careful not to flag non-insulting messages, even if they follow previous bullying behavior, 
   as an apology or neutral statement does not continue the harmful behavior. 
   If the latest message is harmful, such as calling someone “stupid,” “ugly” or "pizzaface", 
@@ -32,7 +32,7 @@ class Bullycatcher:
   If you are going to say in your explanation that you are going to return "False" then that is not bullying so actually return "False" and do not flag it as bullying.**
 
 """
-
+#prompt to detect bullying
 
   def __init__(self, user_name):
     self.open_ai = Complete(self.SYSTEM_PROMPT) #dependency injecting the SYSTEM_PROMPT
@@ -48,3 +48,5 @@ class Bullycatcher:
         return None
     return response
     #if the user is bullying return the response
+
+

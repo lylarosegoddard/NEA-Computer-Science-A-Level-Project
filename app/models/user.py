@@ -16,7 +16,8 @@ class User(BaseModel):
 
     def check_password(self, password):
         return self.hashed_password == self.hash_password(password)
-        #checks if the password entered by the user is the same as the password saved in the database
+        #have to hash the password the user gave and compare the hashed passwords
+        #as we cant decrypt the hashed password in the database
 
     def set_password(self, password):
         self.hashed_password = self.hash_password(password)

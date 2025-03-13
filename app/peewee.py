@@ -15,6 +15,28 @@ def initialise_database():
         db.create_tables([User, Conversation, Message])
 
 #this results in this SQL:
-#
+
+#CREATE TABLE "conversation" (
+# "id" INTEGER NOT NULL PRIMARY KEY, 
+# "user_id" INTEGER NOT NULL, 
+# "created_at" DATETIME NOT NULL, 
+# FOREIGN KEY ("user_id") REFERENCES "user" ("id")
+#);
+
+#CREATE TABLE "message" (
+# "id" INTEGER NOT NULL PRIMARY KEY, 
+# "conversation_id" INTEGER NOT NULL, 
+# "message" TEXT NOT NULL, 
+# "created_at" DATETIME NOT NULL, 
+# "bullying" INTEGER NOT NULL DEFAULT 0, 
+# "is_bullying" INTEGER NOT NULL DEFAULT 0, 
+# "explanation" TEXT
+#);
+
+#CREATE TABLE "user" (
+# "id" INTEGER NOT NULL PRIMARY KEY, 
+# "name" TEXT NOT NULL UNIQUE, 
+# "hashed_password" TEXT NOT NULL
+#);
         
 
