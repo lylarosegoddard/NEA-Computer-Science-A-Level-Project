@@ -31,13 +31,15 @@ else:
         if password.lower() == 'quit':
             print("Goodbye!")
             exit()
-    print("Welcome back " + name + "!\n")   
+   
 #if the users name is in the database it asks for the password 
 #if that password entered is wrong then the user can retry as many times as necessary or they can quit
 
 if BannedQuery(user).banned():
     print("You have exceeded the number of bullying offences allowed. You have been banned.")
     exit()
+else:
+    print("Welcome back " + name + "!\n") 
 #if the user has exceeded the number of bullying offences allowed they are banned
 
 print("\n\nEnter 'Goodbye' at any point in the conversation to end the conversation. ")
