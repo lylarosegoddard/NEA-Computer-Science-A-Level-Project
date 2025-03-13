@@ -35,8 +35,9 @@ class Bullycatcher:
 """
 
 
-  def __init__(self):
+  def __init__(self, user_name):
     self.open_ai = Complete(self.SYSTEM_PROMPT)
+    self.user_name = user_name
 #uses the Complete class to connect to the OpenAI API and carry out the SYSTEM_PROMPT
 
   def detect_bullying(self, messages):
