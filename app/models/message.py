@@ -1,8 +1,6 @@
 #Message class/table 
 
-#inherits from base model class
 from app.models.base_model import BaseModel
-#imports
 from peewee import ForeignKeyField, IntegerField, TextField, DateTimeField, BooleanField
 import datetime
 from app.models.conversation import Conversation

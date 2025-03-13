@@ -1,6 +1,5 @@
 #Bullycatcher class
 
-#imports Complete class so the bullycatcher class can connect to the OpenAI API
 from app.complete import Complete
 
 class Bullycatcher:
@@ -36,9 +35,9 @@ class Bullycatcher:
 
 
   def __init__(self, user_name):
-    self.open_ai = Complete(self.SYSTEM_PROMPT)
+    self.open_ai = Complete(self.SYSTEM_PROMPT) #dependency injecting the SYSTEM_PROMPT
     self.user_name = user_name
-#uses the Complete class to connect to the OpenAI API and carry out the SYSTEM_PROMPT
+    #uses the Complete class to connect to the OpenAI API and carry out the SYSTEM_PROMPT
 
   def detect_bullying(self, messages):
     conversation_text = "\n".join(messages)

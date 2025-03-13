@@ -1,14 +1,11 @@
 #TestBannedUser class - TDD
 
 import unittest
-#allows the program to write tests
 from app.models.user import User
 from app.models.conversation import Conversation
 from app.models.message import Message
 from app.peewee import initialise_database
 from app.banned_query import BannedQuery
-#allows the program to interact with the database which is where the information to ban the user will be taken from
-
 
 class TestBannedUser(unittest.TestCase):
     def setUp(self):
@@ -22,7 +19,7 @@ class TestBannedUser(unittest.TestCase):
         Message.delete().execute()
         Conversation.delete().execute()
         User.delete().execute()
-        #deletes the database
+        #cleans up the database after the test
 
     def test_not_banned_user(self):
         self.assertFalse(BannedQuery(self.user).banned())

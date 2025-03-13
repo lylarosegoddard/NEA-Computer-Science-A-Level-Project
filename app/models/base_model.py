@@ -1,5 +1,5 @@
 # base model class
-#allows you to use the peewee ORM
+
 from peewee import SqliteDatabase, Model
 
 #connects database to file 'db.sqlite'

@@ -1,6 +1,5 @@
-#main.py
+#python main.py to run the program
 
-#imports to utilise all the features of the program
 from openai import OpenAI
 from app.friend import Friend
 from app.conversation_runner import ConversationRunner

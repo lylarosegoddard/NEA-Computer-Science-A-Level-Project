@@ -1,8 +1,6 @@
 #Conversation class/table
 
-#inherits from base model class
 from app.models.base_model import BaseModel
-#imports
 from app.models.user import User
 import datetime
 from peewee import ForeignKeyField, DateTimeField

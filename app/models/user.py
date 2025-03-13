@@ -1,10 +1,7 @@
 #User class/table
 
-#inherits from base model class
 from app.models.base_model import BaseModel
-#importing from peewee ORM
-from peewee import CharField, BooleanField
-#importing the password hashing library
+from peewee import CharField
 import hashlib
 
 
@@ -13,7 +10,7 @@ class User(BaseModel):
     hashed_password = CharField()
     #saves the users name and hashed password to the database
     
-    def hash_password(self, password):
+    def hash_password(self, password): #password hashing
         return hashlib.sha256(password.encode()).hexdigest()
         #hashes the password
 
